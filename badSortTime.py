@@ -23,7 +23,7 @@ def badSort(A, low, high, alpha):
         # Sort first part of array again
         badSort(A, low, low+m-1, alpha)
 
-alpha = [2.0/3, 3.0/4]
+alpha = [2/3, 3/4]
 for a in alpha:
     # size of tests
     nums = [10, 20, 30, 40, 50, 60, 70]

@@ -29,13 +29,12 @@ def fractionToFloat(fraction):
     for i in range(len(fraction)):
         if fraction[i] == '/':
             slashIndex = i
-        numerator = float(fraction[0:i])
-        denominator = float(fraction[i:])
-    return numerator
+    numerator = int(fraction[0:slashIndex])
+    denominator = int(fraction[slashIndex+1:])
+    return numerator/denominator
 
 if len(sys.argv) == 2:
     alpha = fractionToFloat(sys.argv[1])
-    print(alpha)
     # Sets file path
     filepath = 'data.txt'
     # String to write to output file
