@@ -23,8 +23,18 @@ def badSort(A, low, high, alpha):
         # Sort first part of array again
         badSort(A, low, low+m-1, alpha)
 
+# Converts fraction string to float
+def fractionToFloat(fraction):
+    slashIndex = 0
+    for i in range(len(fraction)):
+        if fraction[i] == '/':
+            slashIndex = i
+        numerator = float(fraction[0:i])
+        denominator = float(fraction[i:])
+    return numerator
+
 if len(sys.argv) == 2:
-    alpha = int(sys.argv[1][0]) / int(sys.argv[1][2])
+    alpha = fractionToFloat(sys.argv[1])
     print(alpha)
     # Sets file path
     filepath = 'data.txt'
